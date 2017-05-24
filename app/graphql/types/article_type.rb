@@ -5,4 +5,7 @@ ArticleType = GraphQL::ObjectType.define do
   field :content, types.String
   field :comments_count, types.Int
   field :favorites_count, types.Int
+
+  field :user, UserType
+  field :comments, types[CommentType]
 end
