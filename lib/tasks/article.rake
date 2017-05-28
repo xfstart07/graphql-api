@@ -10,10 +10,9 @@ namespace :data do
   end
 
   task create_comment: :environment do
-    article = Article.order(created_at: :desc).sample
+    article = Article.first
 
-    comment_count= rand(2..5)
-    comment_count.times do |i|
+    3.times do |i|
       cuser = User.order(created_at: :desc).sample
       article.comments.create(user_id: cuser.id, content: "article comment content")
     end

@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "graphql"
+gem 'graphql-batch'
 gem 'graphiql-rails', group: :development
 
 group :development, :test do
