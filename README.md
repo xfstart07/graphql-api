@@ -1,3 +1,8 @@
+# 例子
+
+所有的例子都在 Tags 中。
+
+
 # Ruby on Rails 的 GraphQL 搜索例子
 
 GraphQL 是一个接口搜索语言，由 Feacbook 在 2015 年开源的。
