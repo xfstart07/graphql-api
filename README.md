@@ -3,12 +3,12 @@
 所有的例子都在 Tags 中。
 
 
-# Ruby on Rails 的 GraphQL 搜索例子
+# Ruby on Rails 使用 GraphQL 例子
 
 GraphQL 是一个接口搜索语言，由 Feacbook 在 2015 年开源的。
 
 
-GraphQL 就是可以让客户端查询他们确切需要的东西，服务器并不会返回更多其他的数据。
+GraphQL 就是可以让客户端查询他们确切需要的东西，服务器并不会返回过多的数据。
 
 一个 GraphQL 请求分为 查询(读操作)，或 变化(mutation，写操作), 请求是一个简单的字符串(类似 json 的格式)，GraphQL 服务能解析，执行，并返回指定的数据。
 
@@ -16,9 +16,9 @@ GraphQL 就是可以让客户端查询他们确切需要的东西，服务器并
 
 * 在请求中，只返回客户端需要的数据
 
-* 在一次请求中，返回更多资源。（这个 REST APIs 其实也可以）
+* 在一次请求中，返回更多资源。
 
-* 能描述一个类型系统（Describe what’s possible with a type system）
+* 用类型系统描述什么是可得的
 
 * 可维护性
 
@@ -66,7 +66,6 @@ gem 'graphiql-rails', group: :development
 
     rails g graphql:install
     
-
 运行查看
 
     rails server
@@ -93,7 +92,7 @@ end
 ```ruby
 QueryType = GraphQL::ObjectType.define do
   name "Query"
-  description "The query root of this schema"
+  description "一个根查询的 schema"
 
   field :acticle do
     type ArticleType
@@ -104,7 +103,7 @@ QueryType = GraphQL::ObjectType.define do
 end
 ```
 
-模式的进入文件
+schema 进入文件
 
 路径 `app/graphql/graphq_api_schema.rb`
 
@@ -112,7 +111,6 @@ end
 GraphqApiSchema = GraphQL::Schema.define do
   query(Types::QueryType)
 end
-
 ```
 
 在 `application.rb` 中加载 graphql 文件
@@ -122,9 +120,9 @@ config.autoload_paths << Rails.root.join('app/graphql')
 config.autoload_paths << Rails.root.join('app/graphql/types')
 ```
 
-查询文章
+下面启动 rails, 在 `localhost:3000/graphiql` 查询文章
 
-```ruby
+```
 query {
   acticle(id: 1){
     title
@@ -134,7 +132,7 @@ query {
 
 结果
 
-```ruby
+```json
 {
   "data": {
     "acticle": {
@@ -156,7 +154,7 @@ query_string = "
 }"
 result_hash = GraphqApiSchema.execute(query_string)
 
-output:
+# output:
 # {
 #   "data" => {
 #     "acticle" => {
@@ -169,4 +167,5 @@ output:
 
 # Resource
 
+https://github.com/xfstart07/graphql-api/issues
 http://tech.eshaiju.in/blog/2017/05/06/a-graphql-server-implementation-ruby-on-rails/
