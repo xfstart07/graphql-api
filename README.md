@@ -68,7 +68,7 @@ gem 'graphiql-rails', group: :development
     
 生成：
 
-* 创建一个文件加 `app/graphql/`
+* 创建一个文件夹 `app/graphql/`
 * 创建一个默认的 schema
 * 添加一个查询类型定义
 * 添加一个查询路由
