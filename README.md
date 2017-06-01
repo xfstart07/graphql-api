@@ -8,7 +8,7 @@
 GraphQL 是一个接口搜索语言，由 Feacbook 在 2015 年开源的。
 
 
-GraphQL 就是可以让客户端查询他们确切需要的东西，服务器并不会返回过多的数据。
+GraphQL 就是可以让客户端查询他们确切需要的数据，服务器并不会返回过多的数据。
 
 一个 GraphQL 请求分为 查询(读操作)，或 变化(mutation，写操作), 请求是一个简单的字符串(类似 json 的格式)，GraphQL 服务能解析，执行，并返回指定的数据。
 
@@ -20,7 +20,7 @@ GraphQL 就是可以让客户端查询他们确切需要的东西，服务器并
 
 * 用类型系统描述什么是可得的
 
-* 可维护性
+* 可维护性 -  不需要考虑版本来迭代 API
 
 ### GraphQL 查询例子
 
@@ -59,6 +59,8 @@ GraphQL 就是可以让客户端查询他们确切需要的东西，服务器并
 gem "graphql"
 gem 'graphiql-rails', group: :development
 ```
+
+`graphiql-rails` 是一个 graphql 的请求页面，被打包成一个 Gem.
 
 然后执行 `bundle install`
 
