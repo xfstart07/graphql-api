@@ -1,14 +1,12 @@
-# 例子
 
-所有的例子都在 Tags 中。
-
+英语翻译的不好，我把基本的介绍和操作步骤整理了。项目中一共有4个例子。分别放在四个 Tags 中。有查询、修改、嵌套数据查询，N+1 问题的解决。
 
 # Ruby on Rails 使用 GraphQL 例子
 
 GraphQL 是一个接口搜索语言，由 Feacbook 在 2015 年开源的。
 
 
-GraphQL 就是可以让客户端查询他们确切需要的数据，服务器并不会返回过多的数据。
+GraphQL 就是可以让客户端查询他们确切需要的数据，服务器并不会有过多的返回。
 
 一个 GraphQL 请求分为 查询(读操作)，或 变化(mutation，写操作), 请求是一个简单的字符串(类似 json 的格式)，GraphQL 服务能解析，执行，并返回指定的数据。
 
@@ -20,11 +18,11 @@ GraphQL 就是可以让客户端查询他们确切需要的数据，服务器并
 
 * 用类型系统描述什么是可得的
 
-* 可维护性 -  不需要考虑版本来迭代 API
+* 可维护性 -  不需要考虑版本的迭代 API
 
 ### GraphQL 查询例子
 
-一个查询用户的例子
+先来看看一个查询用户的例子
 
 ```
 {
@@ -60,13 +58,20 @@ gem "graphql"
 gem 'graphiql-rails', group: :development
 ```
 
-`graphiql-rails` 是一个 graphql 的请求页面，被打包成一个 Gem.
+`graphiql-rails` 是一个 graphql 的 Web 请求页面，使用 [graphiql](https://github.com/graphql/graphiql) 打包成一个 Gem.
 
 然后执行 `bundle install`
 
 生成 GraphQL 文件
 
     rails g graphql:install
+    
+生成：
+
+* 创建一个文件加 `app/graphql/`
+* 创建一个默认的 schema
+* 添加一个查询类型定义
+* 添加一个查询路由
     
 运行查看
 
