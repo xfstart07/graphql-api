@@ -169,6 +169,8 @@ result_hash = GraphqApiSchema.execute(query_string)
 
 # Resource
 
+http://graphql-ruby.org/
+
 https://github.com/xfstart07/graphql-api/issues
 
 http://tech.eshaiju.in/blog/2017/05/06/a-graphql-server-implementation-ruby-on-rails/
